@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_show_tab.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 21:07:02 by username          #+#    #+#             */
-/*   Updated: 2026/07/22 21:59:12 by lallaire         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_show_tab.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/07/22 21:07:02 by username         #+#    #+#              */
+/*   Updated: 2026/07/23 01:48:54 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,27 @@ void	ft_show_tab(struct s_stock_str *par)
 		write(1, &nl, 1);
 		ft_putnbr(par[i].size);
 		write(1, &nl, 1);
-		while (par[i].copy[j] != '\0')
-		{
-			ft_putchar(par[i].copy[j]);
-			j++;
-		}
+		ft_putstr(par[i].copy);
+		write(1, &nl, 1);
+		i++;
+	}
+}
+
+void	ft_show_tab(struct s_stock_str *par)
+{
+	int		i;
+	char	nl;
+	int		j;
+
+	nl = '\n';
+	i = 0;
+	while (par[i].str != NULL)
+	{
+		ft_putstr(par[i].str);
+		write(1, &nl, 1);
+		ft_putnbr(par[i].size);
+		write(1, &nl, 1);
+		ft_putstr(par[i].copy);
 		write(1, &nl, 1);
 		i++;
 	}
